@@ -1,0 +1,35 @@
+create database loja_de_infomatica;
+
+use loja_de_infomatica;
+
+create table cliente (
+	id_cliente int primary key auto_increment,
+    nome varchar(105),
+    email varchar(255),
+    endereco varchar(255)
+);
+
+create table pedido(
+	id_pedido int primary key auto_increment,
+    id_cliente int not null,
+    observacao varchar(255),
+    foreign key (id_cliente) references cliente(id_cliente)
+);
+
+create table produto (
+	id_produto int primary key auto_increment,
+    descricao varchar(105),
+    preco decimal(10,4),
+    cfop int,
+    classificacao_fiscal varchar(50)
+);
+
+create table itemPedido(
+	id_pedido int not null,
+    id_produto int not null,
+    quantidade int,
+    foreign key (id_pedido) references pedido(id_pedido),
+    foreign key (id_produto) references produto(id_produto)
+);
+
+
