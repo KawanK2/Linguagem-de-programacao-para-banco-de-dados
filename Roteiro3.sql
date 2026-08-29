@@ -1,6 +1,6 @@
-create database loja_de_infomatica;
+create database loja_de_informatica;
 
-use loja_de_infomatica;
+use loja_de_informatica;
 
 create table cliente (
 	id_cliente int primary key auto_increment,
